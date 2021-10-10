@@ -52,5 +52,23 @@ namespace DHWeb.Helpers
             }
         }
 
+
+          public static string GetDisplayName<TEnum>(string enumValue) where TEnum : Enum{
+            
+
+            MemberInfo member_info = typeof(TEnum).GetMember(enumValue.ToString())
+                                            .FirstOrDefault();
+                                            
+            var display =  member_info.GetCustomAttribute<DisplayAttribute>();
+
+            if(display != null){
+                
+                return display.Name;
+            }else{
+                return string.Empty;
+            }
+        }
+
+
     }
 }

@@ -31,6 +31,12 @@ namespace DHWeb.Controllers
             return View(vm);
         }
 
+        [HttpPost]
+        public IActionResult Form(FormViewModel vm){
+            
+            return View(vm);
+        }
+
         public IActionResult Privacy()
         {
             return View();

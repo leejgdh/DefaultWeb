@@ -6,59 +6,70 @@
 
     <div class="card-body">
 
-        <div class="form-group">
-            <label asp-for="Name"></label>
-            <input type="text" asp-for="Name" class="form-control" />
-        </div>
+        <form asp-controller="Home" asp-action="Form" method="post">
 
-
-
-        <div class="form-group">
-            <label asp-for="UserType"></label>
-
-            <select asp-for="UserType" asp-items="Model.UserTypes" class="form-control"></select>
-        </div>
-
-        <div class="form-group">
-
-            <div class="form-check">
-                <input type="checkbox" asp-for="IsAllow" class="form-check-input" />
-                <label asp-for="IsAllow" class="form-check-label">
-                </label>
+            <div class="form-group">
+                <label asp-for="Name"></label>
+                <input type="text" asp-for="Name" class="form-control" />
             </div>
 
-        </div>
+            <div class="form-group">
+                <label asp-for="UserType"></label>
 
-        <div class="form-group">
-            <div class="form-check-inline">
-                <input type="radio" asp-for="UserType" id="UserType_NONE" class="form-check-input" value="NONE" />
-                <label for="UserType_NONE" class="form-check-label">@ViewMethod.GetDisplayName(EUserType.NONE)</label>
+                <select asp-for="UserType" asp-items="Model.UserTypes" class="form-control"></select>
             </div>
 
-            <div class="form-check-inline">
-                <input type="radio" asp-for="UserType" id="UserType_ADMIN" class="form-check-input" value="ADMIN" />
-                <label for="UserType_ADMIN" class="form-check-label">@ViewMethod.GetDisplayName(EUserType.ADMIN)</label>
-            </div>
+            <div class="form-group">
 
-            <div class="form-check-inline">
-                <input type="radio" asp-for="UserType" id="UserType_USER" class="form-check-input" value="USER" />
-                <label for="UserType_USER" class="form-check-label">@ViewMethod.GetDisplayName(EUserType.USER)</label>
-            </div>
-
-        </div>
-
-
-        <div class="form-group">
-
-            @foreach (var item in Model.UserTypes)
-            {
-                <div class="form-check-inline">
-                    <input type="checkbox" id="@item.Value" class="form-check-input" />
-                    <label for="@item.Value" class="form-check-label">@item.Text</label>
+                <div class="form-check">
+                    <input type="checkbox" asp-for="IsAllow" class="form-check-input" />
+                    <label asp-for="IsAllow" class="form-check-label">
+                    </label>
                 </div>
-            }
 
-        </div>
+            </div>
+
+
+            <div class="form-group">
+                <div class="form-check-inline">
+                    <input type="radio" asp-for="Service" class="form-check-input" value="NONE"/>
+                    <label for="Service_NONE"
+                        class="form-check-label">@ViewMethod.GetDisplayName(EService.NONE)</label>
+                </div>
+
+                 <div class="form-check-inline">
+                    <input type="radio" asp-for="Service" class="form-check-input" value="WEB"/>
+                         <label for="Service_WEB"
+                        class="form-check-label">@ViewMethod.GetDisplayName(EService.WEB)</label>
+                </div>
+
+            </div>
+
+@* 
+            <div class="form-group">
+                <div class="form-check-inline">
+                    <input type="radio" asp-for="UserType" id="UserType_NONE" class="form-check-input" value="NONE" />
+                    <label for="UserType_NONE"
+                        class="form-check-label">@ViewMethod.GetDisplayName(EUserType.NONE)</label>
+                </div>
+
+                <div class="form-check-inline">
+                    <input type="radio" asp-for="UserType" id="UserType_ADMIN" class="form-check-input" value="ADMIN" />
+                    <label for="UserType_ADMIN"
+                        class="form-check-label">@ViewMethod.GetDisplayName(EUserType.ADMIN)</label>
+                </div>
+
+                <div class="form-check-inline">
+                    <input type="radio" asp-for="UserType" id="UserType_USER" class="form-check-input" value="USER" />
+                    <label for="UserType_USER"
+                        class="form-check-label">@ViewMethod.GetDisplayName(EUserType.USER)</label>
+                </div>
+
+            </div> *@
+
+            <button class="btn btn-block btn-primary">Submit</button>
+        </form>
+
 
     </div>
 
