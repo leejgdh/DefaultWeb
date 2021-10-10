@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using DHWeb.Models;
+using DHWeb.Models.ViewModels.Home;
 
 namespace DHWeb.Controllers
 {
@@ -21,6 +22,13 @@ namespace DHWeb.Controllers
         public IActionResult Index()
         {
             return View();
+        }
+
+        public IActionResult Form(){
+
+            FormViewModel vm = new FormViewModel();
+
+            return View(vm);
         }
 
         public IActionResult Privacy()
