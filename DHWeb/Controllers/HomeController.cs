@@ -31,9 +31,10 @@ namespace DHWeb.Controllers
             return View(vm);
         }
 
+        [ValidateAntiForgeryToken]
         [HttpPost]
         public IActionResult Form(FormViewModel vm){
-            
+
             return View(vm);
         }
 
