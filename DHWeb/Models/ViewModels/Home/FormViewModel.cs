@@ -11,6 +11,7 @@ namespace DHWeb.Models.ViewModels.Home
         public FormViewModel()
         {
             UserTypes = ViewMethod.GetEnumSelectList<EUserType>();
+            UserTypes = ViewMethod.GetEnumSelectList<EUserType>();
         }
 
         [Display(Name = "이름", Description = "홍길동")]
@@ -18,8 +19,10 @@ namespace DHWeb.Models.ViewModels.Home
 
         [Display(Name = "사용자 유형")]
         public EUserType UserType { get; set; }
-        
+
         public List<SelectListItem> UserTypes { get; set; }
+
+        public List<SelectListItem> UserTypeCheckBoxies{get; set;}
 
         public bool IsAllow { get; set; }
 
